@@ -12,6 +12,18 @@ class User {
   firstName() {
     return this.name.split(' ')[0]
   }
+
+  street() {
+    return this.address.split(', ')[0]
+  }
+
+  cityState() {
+    return this.address.split(', ')[1].split(' ').slice(0, 2).join(', ')
+  }
+
+  zip() {
+    return this.address.split(', ')[1].split(' ').pop()
+  }
 }
 
 export default User
