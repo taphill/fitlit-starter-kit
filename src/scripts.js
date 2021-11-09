@@ -2,13 +2,13 @@
 // Do not delete or rename this file ********
 import './css/normalize.css'
 import './css/styles.css'
-import userData from './data/users'
+import users from './apiCalls'
 import User from './User'
 import UserRepository from './UserRepository'
 
 // Variables
-let userRepository = new UserRepository(userData)
-let user = new User(userRepository.data[0])
+let user = null
+let userRepository = null
 
 
 // DOM Elements
@@ -23,7 +23,10 @@ document.addEventListener('DOMContentLoaded', displayContent)
 
 
 // Handlers
-function displayContent() {
+async function displayContent() {
+  userRepository = await users().then(data => new UserRepository(data.userData))
+  user = new User(userRepository.data[0])
+
   displayUserWelcome()
   displayUserFriends()
   displayUserInfo()

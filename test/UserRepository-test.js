@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import userData from '../src/data/users'
+import userData from './fixtures/users'
 import UserRepository from '../src/UserRepository'
 
 const user = {
