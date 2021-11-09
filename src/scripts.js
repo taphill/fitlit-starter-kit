@@ -6,6 +6,7 @@ import users from './apiCalls'
 import User from './User'
 import UserRepository from './UserRepository'
 
+
 // Variables
 let user = null
 let userRepository = null
